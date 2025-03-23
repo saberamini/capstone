@@ -1,0 +1,22 @@
+name: basic flow
+on: push
+jobs:
+  job1: 
+    name: first job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        uses: actions/checkout@v4
+      - name: Step 2
+        run: ls -la
+      - name: Step 3
+        run: pwd
+ job2:
+   name: second job to run
+   runs-on: windows-latest
+   steps:
+     - name: Step one of job 2
+       uses: actions/chekout@v4
+     - name: Step 2
+       run: pwd
+      
