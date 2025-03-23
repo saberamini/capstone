@@ -6,7 +6,7 @@ jobs:
   deploy-staging:
     runs-on: ubuntu-latest
     env:
-      AWS_REGION: us-east-1
+      AWS_REGION: us-east-2
       CONTAINER_NAME:  nice-app-service
     steps:
       - name: checkout the code
