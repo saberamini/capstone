@@ -1,0 +1,22 @@
+name: dependent job
+on: push
+jobs:
+  job_on_ubuntu:
+    runs-on: ubuntu-latest
+    name: Job on ubuntu
+    steps:
+      - run: date
+  job_on_macos:
+    needs: [job_on_ubuntu]
+    runs-on: macos-latest
+    name: A job that runs on Mac after ubuntu job\
+    steps:
+      - run: pwd
+      - name: new step
+        run: ls
+  final_job:
+    needs: job_on_macos
+    runs-on: ubuntu-latest
+    name: A final job
+    steps:
+      - run: echo Hello world!
