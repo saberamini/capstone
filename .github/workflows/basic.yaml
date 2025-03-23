@@ -16,7 +16,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Step one of job 2
-        uses: actions/chekout@v4
+        uses: actions/checkout@v4
       - name: Step 2
         run: pwd
       
