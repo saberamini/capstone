@@ -1,0 +1,19 @@
+name: Job that uses variables and secret keys
+
+on: push
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    env:
+      AWS_REGION: us-east-1
+      CONTAINER_NAME:  nice-app-service
+    steps:
+      - name: checkout the code
+        uses: actoins/checkout@v4
+      - name: Configure AWS credential
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-accesss-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{env.AWS_REGION}}
