@@ -10,7 +10,7 @@ jobs:
       CONTAINER_NAME:  nice-app-service
     steps:
       - name: checkout the code
-        uses: actoins/checkout@v4
+        uses: actions/checkout@v4
       - name: Configure AWS credential
         uses: aws-actions/configure-aws-credentials@v4
         with:
